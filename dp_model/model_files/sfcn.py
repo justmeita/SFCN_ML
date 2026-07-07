@@ -59,6 +59,6 @@ class SFCN(nn.Module):
         x_f = self.feature_extractor(x)
         x = self.classifier(x_f)
         x = x.view(x.size(0), -1)
-        return 
+        return x
 
 
