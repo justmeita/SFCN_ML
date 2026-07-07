@@ -56,11 +56,9 @@ class SFCN(nn.Module):
         return layer
 
     def forward(self, x):
-        out = list()
         x_f = self.feature_extractor(x)
         x = self.classifier(x_f)
-        x = F.log_softmax(x, dim=1)
-        out.append(x)
-        return out
+        x = x.view(x.size(0), -1)
+        return 
 
 
